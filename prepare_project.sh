@@ -20,4 +20,4 @@ fi
 mkdir $1
 
 touch "$ID/riddle.txt"
-echo $TEMPLATE > "$ID/solution.py"
+echo "${TEMPLATE}" > ${ID}/solution.py
