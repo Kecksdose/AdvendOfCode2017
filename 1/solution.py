@@ -1,7 +1,7 @@
 def solve(file):
     with open(file, 'r') as f:
         content = f.read()
-        content = content.replace('\n', '')
+        content = line.rstrip('\n')
 
         prev_val = 0
         total = 0
