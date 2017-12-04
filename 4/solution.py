@@ -14,9 +14,9 @@ def solve(file):
 
 # Test examples
 files_and_solutions = {
-    'test1.txt': 1,
-    'test2.txt': 0,
-    'test3.txt': 1
+    'test1.txt': 1,  # Valid
+    'test2.txt': 0,  # Invalid
+    'test3.txt': 1  # Valid
 }
 
 for file, solution in files_and_solutions.items():
