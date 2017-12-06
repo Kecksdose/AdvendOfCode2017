@@ -1,11 +1,12 @@
 ### Example
 # Four blocks:
-# 0 2 7 0 (Chose 7)
-# 2 4 1 2 (Chose 4)
-# 3 1 2 3 (Chose first 3)
-# 0 2 3 4 (Chose 4)
-# 1 3 4 1 (Chose 4)
-# 2 4 1 2
+# 0. 0 2 7 0 (Chose 7)
+# 1. 2 4 1 2 (Chose 4)
+# 2. 3 1 2 3 (Chose first 3)
+# 3. 0 2 3 4 (Chose 4)
+# 4. 1 3 4 1 (Chose 4)
+# 5. 2 4 1 2
+# --> Result: 5
 def solve(file):
     with open(file, 'r') as f:
         bank = f.read()
@@ -20,12 +21,11 @@ def solve(file):
         has_been_seen.append(bank)
 
         while True:
-            # Increase number of steps
+            # Increase number of steps and copy old bank
             n_steps += 1
-
-            # Get index of maximum
             new_bank = bank[:]
 
+            # Get index of maximum
             max_index = 0
             max_val = 0
             for index in range(0, n_blocks):
@@ -58,7 +58,7 @@ def solve(file):
 
 
 # Test examples
-assert solve('test.txt') == 5
+assert solve('test.txt') == 4
 
 
 # Solve riddle
