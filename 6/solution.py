@@ -26,12 +26,8 @@ def solve(file):
             new_bank = bank[:]
 
             # Get index of maximum
-            max_index = 0
-            max_val = 0
-            for index in range(0, n_blocks):
-                if new_bank[index] > max_val:
-                    max_val = new_bank[index]
-                    max_index = index
+            max_val = max(new_bank)
+            max_index = new_bank.index(max_val)
 
             # Spread blocks
             still_to_add = new_bank[max_index]
@@ -58,7 +54,7 @@ def solve(file):
 
 
 # Test examples
-assert solve('test.txt') == 4
+assert solve('test.txt') == 5
 
 
 # Solve riddle
